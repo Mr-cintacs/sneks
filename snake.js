@@ -39,7 +39,7 @@ function drawSnake() {
     });
 }
 
-function onSnake(position, { ignoreHead = false } = {}) {
+function onSnake(position, ignoreHead = false) {
     return snakeBody.some((segment, index) => {
     if (ignoreHead && index === 0) return false;
     return comparePosition(segment, position);
@@ -63,5 +63,5 @@ function addSegments()
     newSegments = 0;
 }
 function snakeIntersection() {
-    return onSnake(snakeBody[0], { ignoreHead: true });
+    return onSnake(snakeBody[0], true);
 }
